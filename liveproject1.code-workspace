@@ -1,0 +1,14 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../liveprojectMod"
+        }
+    ],
+    "settings": {
+        "java.configuration.updateBuildConfiguration": "interactive",
+        "java.home": "C:\\Program Files\\Java\\jdk1.8.0_341"
+    }
+}
