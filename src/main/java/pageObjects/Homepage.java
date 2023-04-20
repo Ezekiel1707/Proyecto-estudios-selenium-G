@@ -25,7 +25,7 @@ public class Homepage extends BasePage {
 	By hiddenElementsLink = By.linkText("HIDDEN ELEMENTS");
 	By iFrameLink = By.linkText("IFRAME");
 	By loaderLink = By.linkText("LOADER");
-	By loginPortalLink = By.linkText("LOGIN PORTAL TEST");
+	By loginPortalLink = By.cssSelector("[href='loginPortal\\.html']");
 	By mouseLink = By.linkText("MOUSE MOVEMENT");
 	By popupLink = By.linkText("POP UPS & ALERTS");
 	By predictiveLink = By.linkText("PREDICTIVE SEARCH");

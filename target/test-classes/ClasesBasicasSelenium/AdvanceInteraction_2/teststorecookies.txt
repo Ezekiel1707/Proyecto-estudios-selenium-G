@@ -1,0 +1,17 @@
+sign in div#_desktop_user_info .hidden-sm-down
+
+Email textbox section input[name='email']
+test17@test.com
+
+Password textbox input[name='password']
+123456789g
+
+SIGN IN [data-link-action='sign-in']
+
+CLOTHES linktext button
+
+firt product img[alt='Hummingbird printed t-shirt']
+
+add to cart .add-to-cart.btn.btn-primary
+
+continue shopping .cart-content-btn [data-dismiss]
