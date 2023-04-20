@@ -27,9 +27,12 @@ public class ExtentManager extends BasePage {
     }
 
     public static ExtentReports setupExtentReports(String testName) {
+        System.out.println("setup report");
+        System.out.println(testName);
         extentReport = new ExtentReports();
-        ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/report/" +
-                extentReportsPrefix_Name(testName) + ".html");
+        String ExtentSparkReporterFolder = System.getProperty("user.dir") + "/test-output/Reports/"+extentReportsPrefix_Name(testName)+"/" +
+                extentReportsPrefix_Name(testName);
+        ExtentSparkReporter spark = new ExtentSparkReporter(ExtentSparkReporterFolder+ ".html");
         extentReport.attachReporter(spark);
 
         extentReport.setSystemInfo("Tester", "My Name");
