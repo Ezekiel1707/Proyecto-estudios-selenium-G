@@ -1,12 +1,11 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert;
 
-public class Assertions_2 {
+public class CheckBooxTick {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -18,16 +17,15 @@ public class Assertions_2 {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.automationtesting.co.uk");
-        driver.findElement(By.cssSelector(".close-cookie-warning > span")).click();
-        driver.findElement(By.linkText("TEST STORE")).click();
-        driver.findElement(By.cssSelector("[alt='Hummingbird printed t-shirt']")).click();
-        driver.findElement(By.cssSelector(".add-to-cart.btn.btn-primary")).click();
+        driver.get("https://www.automationtesting.co.uk/dropdown.html");
 
-        Thread.sleep(3000);
+        Boolean Var = driver.findElement(By.cssSelector("input#cb_red")).isSelected();
+        // isSelected es un valor true or false. para esto se debe recordar que el
+        // ccsSelectro tiene que ser un input
+        Boolean Var2 = driver.findElement(By.cssSelector("input#cb_green")).isSelected();
 
-        String total = driver.findElement(By.cssSelector(".product-total > .value")).getText();
-        Assert.assertEquals("$26.12", total);
+        System.out.println(Var);
+        System.out.println(Var2);
         
         driver.quit();
     }

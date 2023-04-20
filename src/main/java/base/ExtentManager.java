@@ -21,7 +21,7 @@ public class ExtentManager extends BasePage {
     public static ExtentReports getReport() {
         if (extentReport == null) {
 
-            setupExtentReports("Live Project 1");
+            setupExtentReports("Estudios-Selenium_g");
         }
         return extentReport;
     }

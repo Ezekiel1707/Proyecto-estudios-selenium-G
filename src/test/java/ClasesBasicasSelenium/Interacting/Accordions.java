@@ -1,4 +1,4 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.IOException;
 
-public class accordions {
+public class Accordions {
 
     public static void main(String[] args) throws InterruptedException, IOException {
 

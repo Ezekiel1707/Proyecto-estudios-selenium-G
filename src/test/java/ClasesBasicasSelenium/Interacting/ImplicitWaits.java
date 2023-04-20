@@ -1,11 +1,13 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class SendKyes {
+import java.time.Duration;
+
+public class ImplicitWaits {
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -15,16 +17,14 @@ public class SendKyes {
         WebDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
+        // implicitWait es algo global. solo lo pones una vez. es para esperar que
+        // aparesca en algo.
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://www.automationtesting.co.uk/loader.html");
 
-        driver.get("https://www.automationtesting.co.uk/contactForm.html");
-
-        //
-        driver.findElement(By.cssSelector("input[name='first_name']")).sendKeys("Giulio");
-        driver.findElement(By.cssSelector("input[name='last_name']")).sendKeys("Faragalli");
-        driver.findElement(By.cssSelector("input[name='email']")).sendKeys("email@email.com");
-        driver.findElement(By.cssSelector("textarea[name='message']")).sendKeys("This is a message");
-
+        driver.findElement(By.cssSelector("[onclick]")).click();
         Thread.sleep(3000);
         driver.quit();
+
     }
 }

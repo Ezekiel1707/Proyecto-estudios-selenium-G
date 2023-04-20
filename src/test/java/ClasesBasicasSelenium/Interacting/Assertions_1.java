@@ -1,13 +1,12 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
-public class dropDownMenu {
+public class Assertions_1 {
+
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -18,16 +17,11 @@ public class dropDownMenu {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.automationtesting.co.uk/dropdown.html");
+        driver.get("https://www.automationtesting.co.uk");
 
-        WebElement Variable = driver.findElement(By.cssSelector("select#cars"));
+        String pageTitle = driver.getTitle();
 
-        Select menuItem = new Select(Variable);
-        // menuItem.selectByValue("jeep");
-
-        // menuItem.selectByVisibleText("Audi");
-        menuItem.selectByIndex(1); // El index es un array o List, comienza en cero para elegir
-        Thread.sleep(3000);
+        Assert.assertEquals("Homepage", pageTitle);
 
         driver.quit();
     }

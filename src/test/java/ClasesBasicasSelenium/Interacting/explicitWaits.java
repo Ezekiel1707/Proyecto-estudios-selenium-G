@@ -1,11 +1,16 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HiddenElement {
+import java.time.Duration;
+
+public class explicitWaits {
+
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -16,14 +21,17 @@ public class HiddenElement {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.automationtesting.co.uk/hiddenElements.html");
-        Boolean var;
-        Boolean var2;
-        var = driver.findElement(By.cssSelector(".col-12.col-12-small > p:nth-of-type(2)")).isDisplayed();
-        var2 = driver.findElement(By.cssSelector(".col-12.col-12-small > p:nth-of-type(3)")).isDisplayed();
-        System.out.println(var);
-        System.out.println(var2);
+        driver.get("https://www.automationtesting.co.uk/loader.html");
+        // explicitWait es algo local de un objeto. tienes que crearse o definirse un
+        // objeto que esperar
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[onclick]")));
+
+        driver.findElement(By.cssSelector("[onclick]")).click();
         Thread.sleep(3000);
         driver.quit();
+
     }
 }

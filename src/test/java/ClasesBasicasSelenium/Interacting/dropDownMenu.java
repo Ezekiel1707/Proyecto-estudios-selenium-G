@@ -1,11 +1,13 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 
-public class RadioButton {
+public class dropDownMenu {
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -18,12 +20,15 @@ public class RadioButton {
 
         driver.get("https://www.automationtesting.co.uk/dropdown.html");
 
-        driver.findElement(By.cssSelector("[for='demo-priority-low']")).click();
-        Thread.sleep(3000);// para esperar.
-        driver.findElement(By.cssSelector("[for='demo-priority-normal']")).click();
-        Thread.sleep(3000);// para esperar.
-        driver.findElement(By.cssSelector("[for='demo-priority-high']")).click();
+        WebElement Variable = driver.findElement(By.cssSelector("select#cars"));
+
+        Select menuItem = new Select(Variable);
+        // menuItem.selectByValue("jeep");
+
+        // menuItem.selectByVisibleText("Audi");
+        menuItem.selectByIndex(1); // El index es un array o List, comienza en cero para elegir
         Thread.sleep(3000);
+
         driver.quit();
     }
 }

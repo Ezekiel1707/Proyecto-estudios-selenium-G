@@ -1,16 +1,11 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class explicitWaits {
-
+public class SendKyes {
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -21,17 +16,15 @@ public class explicitWaits {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.automationtesting.co.uk/loader.html");
-        // explicitWait es algo local de un objeto. tienes que crearse o definirse un
-        // objeto que esperar
+        driver.get("https://www.automationtesting.co.uk/contactForm.html");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //
+        driver.findElement(By.cssSelector("input[name='first_name']")).sendKeys("Giulio");
+        driver.findElement(By.cssSelector("input[name='last_name']")).sendKeys("Faragalli");
+        driver.findElement(By.cssSelector("input[name='email']")).sendKeys("email@email.com");
+        driver.findElement(By.cssSelector("textarea[name='message']")).sendKeys("This is a message");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[onclick]")));
-
-        driver.findElement(By.cssSelector("[onclick]")).click();
         Thread.sleep(3000);
         driver.quit();
-
     }
 }

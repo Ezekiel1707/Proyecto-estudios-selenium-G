@@ -1,11 +1,11 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class CheckBooxTick {
+public class ClickTest {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -17,16 +17,11 @@ public class CheckBooxTick {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.automationtesting.co.uk/dropdown.html");
+        driver.get("https://www.automationtesting.co.uk/buttons.html");
 
-        Boolean Var = driver.findElement(By.cssSelector("input#cb_red")).isSelected();
-        // isSelected es un valor true or false. para esto se debe recordar que el
-        // ccsSelectro tiene que ser un input
-        Boolean Var2 = driver.findElement(By.cssSelector("input#cb_green")).isSelected();
+        driver.findElement(By.cssSelector("button#btn_three")).click(); // hay muchos css selector que se pueden usar
+        Thread.sleep(3000);
 
-        System.out.println(Var);
-        System.out.println(Var2);
-        
         driver.quit();
     }
 }

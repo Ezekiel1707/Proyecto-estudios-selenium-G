@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="12,679">
+           time="12,931">
     <properties></properties>
 
 
 
             <testcase
                 name="addRemoveItem"
-                time="12,679"
+                time="12,931"
                 classname="uk.co.automationtesting.AddRemoveItemBasketTest">
             </testcase>
 </testsuite>

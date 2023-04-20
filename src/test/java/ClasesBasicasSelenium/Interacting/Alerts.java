@@ -1,13 +1,11 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.time.Duration;
-
-public class ImplicitWaits {
+public class Alerts {
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -17,14 +15,14 @@ public class ImplicitWaits {
         WebDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
-        // implicitWait es algo global. solo lo pones una vez. es para esperar que
-        // aparesca en algo.
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.automationtesting.co.uk/loader.html");
 
-        driver.findElement(By.cssSelector("[onclick]")).click();
-        Thread.sleep(3000);
+        driver.get("https://www.automationtesting.co.uk/popups.html");
+
+        //driver.findElement(By.cssSelector(".close-cookie-warning > span")).click();
+        driver.findElement(By.cssSelector("button[onclick='alertTrigger()']")).click();
+        Thread.sleep(3000);// para esperar.
+        driver.switchTo().alert().accept(); // Esto es para una alerta con un boton de OK
+        // driver.switchTo().alert().dismiss();// Para una alerta con boton de CANCEL
         driver.quit();
-
     }
 }

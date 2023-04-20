@@ -19,11 +19,16 @@ public class ShopHomepage extends BasePage {
 	By productSix = By.linkText("Mug The Best Is Yet To Come");
 	By productSeven = By.linkText("Mug The Adventure Begins");
 	By productEight = By.linkText("Mug Today Is A Good Day");
+	By singInBtn = By.cssSelector("div#_desktop_user_info .hidden-sm-down");
 
 	public ShopHomepage() throws IOException {
 		super();
 	}
 
+	public WebElement getSingInBtn() throws IOException {
+		this.driver = getDriver();
+		return driver.findElement(singInBtn);
+	}
 	public WebElement getProdOne() throws IOException {
 		this.driver = getDriver();
 		return driver.findElement(productOne);

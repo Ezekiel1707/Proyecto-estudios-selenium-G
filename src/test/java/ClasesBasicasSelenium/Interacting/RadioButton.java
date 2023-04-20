@@ -1,11 +1,11 @@
-package ClasesBasicasSelenium.interacting;
+package ClasesBasicasSelenium.Interacting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class Alerts {
+public class RadioButton {
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -16,13 +16,14 @@ public class Alerts {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.automationtesting.co.uk/popups.html");
+        driver.get("https://www.automationtesting.co.uk/dropdown.html");
 
-        //driver.findElement(By.cssSelector(".close-cookie-warning > span")).click();
-        driver.findElement(By.cssSelector("button[onclick='alertTrigger()']")).click();
+        driver.findElement(By.cssSelector("[for='demo-priority-low']")).click();
         Thread.sleep(3000);// para esperar.
-        driver.switchTo().alert().accept(); // Esto es para una alerta con un boton de OK
-        // driver.switchTo().alert().dismiss();// Para una alerta con boton de CANCEL
+        driver.findElement(By.cssSelector("[for='demo-priority-normal']")).click();
+        Thread.sleep(3000);// para esperar.
+        driver.findElement(By.cssSelector("[for='demo-priority-high']")).click();
+        Thread.sleep(3000);
         driver.quit();
     }
 }

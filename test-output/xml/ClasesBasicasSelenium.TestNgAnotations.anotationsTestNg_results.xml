@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="11,895">
+           time="1,941">
     <properties></properties>
 
 
 
             <testcase
-                name="loginStore"
-                time="11,895"
-                classname="uk.co.automationtesting.Login">
+                name="test"
+                time="1,941"
+                classname="ClasesBasicasSelenium.TestNgAnotations.anotationsTestNg">
             </testcase>
 </testsuite>

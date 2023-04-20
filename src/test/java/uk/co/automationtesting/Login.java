@@ -11,6 +11,8 @@ import java.time.Duration;
 
 import pageObjects.Homepage;
 import pageObjects.LoginPage;
+import pageObjects.ShopHomepage;
+import pageObjects.StoreLoginPage;
 
 public class Login extends Hooks {
 
@@ -45,6 +47,25 @@ public class Login extends Hooks {
         login.getEmail().sendKeys("test17@test.com");
         login.getPassword().sendKeys("123456789g");
         login.getLoginBtn().click();
+
+        System.out.println("user has logged in");
+        Thread.sleep(3000);
+    }
+
+    @Test
+    public void loginStore() throws IOException, InterruptedException {
+
+        Homepage home = new Homepage();
+        ShopHomepage shopHome = new ShopHomepage();
+        StoreLoginPage loginStore = new StoreLoginPage();
+        home.getCookiesBtn().click();
+
+        home.getTestStoreLink().click();
+        Thread.sleep(3000);
+        shopHome.getSingInBtn().click();
+        loginStore.getEmail().sendKeys("test17@test.com");
+        loginStore.getPassword().sendKeys("123456789g");
+        loginStore.getLoginBtn().click();
 
         System.out.println("user has logged in");
         Thread.sleep(3000);
